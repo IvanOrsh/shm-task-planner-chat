@@ -1,7 +1,9 @@
+import AuthPage from "@pages/AuthPage/ui/AuthPage";
+
 function App() {
   return (
     <>
-      <h1 className="text-5xl font-bold underline">Tailwind totally works!</h1>
+      <AuthPage />
     </>
   );
 }
