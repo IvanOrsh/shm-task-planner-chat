@@ -3,22 +3,32 @@ import { twMerge } from "tailwind-merge";
 
 const input = cva(
   [
+    "peer",
+    "h-10",
     "w-full",
-    "flex-1",
-    "rounded-md",
-    "border-2",
+
+    "outline-none",
+
+    "border-l-0",
+    "border-r-0",
+    "border-t-0",
+    "border-b-2",
     "border-gray-300",
+
     "bg-transparent",
     "px-4",
     "py-3",
-    "text-sm",
+    "text-gray-900",
+    "text-md",
 
-    "focus:border-myBlue",
-    "focus:ring-myBlue",
+    "focus:outline-none",
+    "focus:ring-0",
+    "focus:border-myPink",
 
-    "placeholder-gray-400",
+    // "focus:ring-myBlue",
 
-    "dark:border-gray-700",
+    "placeholder-transparent",
+
     "dark:bg-gray-900",
 
     "dark:text-gray-50",
@@ -52,12 +62,7 @@ export const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   return (
-    <div className="space-y-2">
-      {label && (
-        <label htmlFor={label} className="mb-1 block text-sm font-medium">
-          {label}
-        </label>
-      )}
+    <div className="relative">
       <input
         id={label}
         value={value}
@@ -66,6 +71,14 @@ export const Input: React.FC<InputProps> = ({
         className={twMerge(input({ className }))}
         {...props}
       />
+      {label && (
+        <label
+          htmlFor={label}
+          className="absolute -top-3.5 left-2 text-sm text-gray-600 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-gray-600"
+        >
+          {label}
+        </label>
+      )}
       {description && (
         <p className="mt-2 text-sm text-gray-500">{description}</p>
       )}
