@@ -18,6 +18,10 @@ export default {
         myBlue: "#0A32B3",
         myPink: "#BD365D",
       },
+
+      backgroundImage: () => ({
+        pattern: "url('/img/pattern.webp')",
+      }),
     },
   },
   plugins: [formsPlugin],
