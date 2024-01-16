@@ -4,13 +4,13 @@ import { Button } from "@shared/ui/Button/Button";
 import { Input } from "@shared/ui/Input/Input";
 
 type AuthForm = {
-  name: string;
+  email: string;
   password: string;
   confirmPassword?: string;
 };
 
 const initForm: AuthForm = {
-  name: "",
+  email: "",
   password: "",
   confirmPassword: "",
 };
@@ -59,12 +59,12 @@ export default function AuthPage() {
             </svg>
           </div>
           <Input
-            value={form.name}
+            value={form.email}
             onChange={handleChange}
-            name="name"
-            label="Name"
-            type="text"
-            placeholder="Name"
+            name="email"
+            label="Email"
+            type="email"
+            placeholder="Email"
           />
           <Input
             value={form.password}
@@ -88,7 +88,7 @@ export default function AuthPage() {
 
           <div className="mt-5 flex flex-col gap-2">
             <Button
-              disabled={form.name.trim() === "" || form.password.trim() === ""}
+              disabled={form.email.trim() === "" || form.password.trim() === ""}
               size="lg"
               intent="secondary"
             >

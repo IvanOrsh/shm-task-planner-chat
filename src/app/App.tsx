@@ -1,9 +1,9 @@
-import AuthPage from "@pages/AuthPage/ui/AuthPage";
+import { AppRouter } from "./providers/router";
 
 function App() {
   return (
     <>
-      <AuthPage />
+      <AppRouter />
     </>
   );
 }
